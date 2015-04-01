@@ -73,27 +73,63 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+
+- (BOOL)hasDuplicates:(ToDoItem *)todoItem ofEntity: (NSEntityDescription*)entity forPredicate:(NSPredicate*)predicate{
+    
+    if (entity == nil ) YES;
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
+    
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedContext sectionNameKeyPath:nil cacheName:nil];
+    
+    BOOL hasSimilarObject = NO;
+    NSError *error = nil;
+    if (![aFetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+    }
+    else
+    {
+        hasSimilarObject = !(aFetchedResultsController.fetchedObjects.count == 0);
+        NSLog(@"similar user");
+    }
+    
+    return hasSimilarObject;
+}
+
 - (void)saveNewTask {
     if (self.addTaskInput.text.length > 0 && self.addDescriptionInput.text.length > 0) {
         //task and description not nil and add object
         
-        ToDoItem *todoItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ToDoItem class]) inManagedObjectContext:self.managedContext];
+        ToDoItem *todoItem = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([ToDoItem class]) inManagedObjectContext:nil];
+        // Edit the entity name as appropriate.
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"ToDoItem" inManagedObjectContext:self.managedContext];
         
-        [todoItem setTaskName:self.addTaskInput.text];
-        [todoItem setTaskDescription:self.addDescriptionInput.text];
-        [todoItem.user setName:pickerSelection];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(taskName like %@) AND (taskDescription like %@)", todoItem.taskName, todoItem.taskDescription];
         
-    
-        
-        
-        // save DA CONTEXT!
-        NSError *error = nil;
-        if (![self.managedContext save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+        if ([self hasDuplicates:todoItem ofEntity:entity forPredicate:predicate] == NO) {
+            [todoItem setTaskName:self.addTaskInput.text];
+            [todoItem setTaskDescription:self.addDescriptionInput.text];
+            User *user = [User createUserWithName:pickerSelection];
+            
+            
+            [self.managedContext insertObject:user];
+            user.todos = [NSSet setWithObject:todoItem];
+            NSError *error = nil;
+            if (![self.managedContext save:&error]) {
+                NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+                abort();
+            }
         }
     }
 }
+
 
 - (IBAction)didCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

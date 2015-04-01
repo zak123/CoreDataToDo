@@ -119,8 +119,8 @@
     cell.textLabel.text = [[object valueForKey:@"taskName"] description];
     
     
-    User *userObject = [self.userFetchedResultsController objectAtIndexPath:indexPath];
-    cell.detailTextLabel.text = [[userObject valueForKey:@"name"]description];
+    cell.detailTextLabel.text = [[object.user valueForKey:@"name"] description];
+    
     
 
     

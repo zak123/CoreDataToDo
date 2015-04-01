@@ -1,5 +1,5 @@
 //
-//  User.m
+//  User+UserExtension.h
 //  CoreDataToDo
 //
 //  Created by Zachary Mallicoat on 4/1/15.
@@ -7,13 +7,14 @@
 //
 
 #import "User.h"
-#import "ToDoItem.h"
+#import "AppDelegate.h"
 
 
-@implementation User
 
-@dynamic name;
-@dynamic todos;
+@interface User (UserExtension)
+
++(User *) createUserWithName:(NSString*)name;
+
 
 
 

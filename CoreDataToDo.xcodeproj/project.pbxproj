@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6A5F5B11ACB6AE90010CE7D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A5F5B01ACB6AE90010CE7D /* User.m */; };
-		B6A5F5B41ACB6B9A0010CE7D /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B6A5F5B31ACB6B9A0010CE7D /* ToDoItem.m */; };
+		B6B78E371ACC719100528B8C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B78E361ACC719100528B8C /* User.m */; };
+		B6B78E3A1ACC71A500528B8C /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B78E391ACC71A500528B8C /* ToDoItem.m */; };
+		B6B78E3E1ACC723C00528B8C /* User+UserExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B78E3D1ACC723C00528B8C /* User+UserExtension.m */; };
 		B6C3BA9B1ACB335200B24386 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C3BA9A1ACB335200B24386 /* main.m */; };
 		B6C3BA9E1ACB335200B24386 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6C3BA9D1ACB335200B24386 /* AppDelegate.m */; };
 		B6C3BAA11ACB335200B24386 /* CoreDataToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6C3BA9F1ACB335200B24386 /* CoreDataToDo.xcdatamodeld */; };
@@ -32,10 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B6A5F5AF1ACB6AE90010CE7D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		B6A5F5B01ACB6AE90010CE7D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		B6A5F5B21ACB6B9A0010CE7D /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
-		B6A5F5B31ACB6B9A0010CE7D /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+		B6B78E351ACC719100528B8C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		B6B78E361ACC719100528B8C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		B6B78E381ACC71A500528B8C /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		B6B78E391ACC71A500528B8C /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
+		B6B78E3C1ACC723C00528B8C /* User+UserExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+UserExtension.h"; sourceTree = "<group>"; };
+		B6B78E3D1ACC723C00528B8C /* User+UserExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+UserExtension.m"; sourceTree = "<group>"; };
 		B6C3BA951ACB335200B24386 /* CoreDataToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6C3BA991ACB335200B24386 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6C3BA9A1ACB335200B24386 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -106,10 +109,12 @@
 				B6C3BAAB1ACB335200B24386 /* Images.xcassets */,
 				B6C3BAAD1ACB335200B24386 /* LaunchScreen.xib */,
 				B6C3BA9F1ACB335200B24386 /* CoreDataToDo.xcdatamodeld */,
-				B6A5F5B21ACB6B9A0010CE7D /* ToDoItem.h */,
-				B6A5F5B31ACB6B9A0010CE7D /* ToDoItem.m */,
-				B6A5F5AF1ACB6AE90010CE7D /* User.h */,
-				B6A5F5B01ACB6AE90010CE7D /* User.m */,
+				B6B78E381ACC71A500528B8C /* ToDoItem.h */,
+				B6B78E391ACC71A500528B8C /* ToDoItem.m */,
+				B6B78E351ACC719100528B8C /* User.h */,
+				B6B78E361ACC719100528B8C /* User.m */,
+				B6B78E3C1ACC723C00528B8C /* User+UserExtension.h */,
+				B6B78E3D1ACC723C00528B8C /* User+UserExtension.m */,
 				B6C3BACA1ACB407F00B24386 /* AddToDoViewController.h */,
 				B6C3BACB1ACB407F00B24386 /* AddToDoViewController.m */,
 				B6C3BACD1ACB4CE000B24386 /* TaskDelegate.h */,
@@ -244,11 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6A5F5B11ACB6AE90010CE7D /* User.m in Sources */,
+				B6B78E371ACC719100528B8C /* User.m in Sources */,
 				B6C3BAA71ACB335200B24386 /* DetailViewController.m in Sources */,
-				B6A5F5B41ACB6B9A0010CE7D /* ToDoItem.m in Sources */,
+				B6B78E3A1ACC71A500528B8C /* ToDoItem.m in Sources */,
 				B6C3BACC1ACB407F00B24386 /* AddToDoViewController.m in Sources */,
 				B6C3BAA41ACB335200B24386 /* MasterViewController.m in Sources */,
+				B6B78E3E1ACC723C00528B8C /* User+UserExtension.m in Sources */,
 				B6C3BA9E1ACB335200B24386 /* AppDelegate.m in Sources */,
 				B6C3BA9B1ACB335200B24386 /* main.m in Sources */,
 				B6C3BAA11ACB335200B24386 /* CoreDataToDo.xcdatamodeld in Sources */,

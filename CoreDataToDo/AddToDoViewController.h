@@ -10,6 +10,7 @@
 #import "ToDoItem.h"
 #import "TaskDelegate.h"
 #import "User.h"
+#import "User+UserExtension.h"
 
 @interface AddToDoViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
